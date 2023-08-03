@@ -1,0 +1,132 @@
+[
+  {
+    "location": "Bali",
+    "duration": "7 days",
+    "star_rating": 4,
+    "holiday_type": "Beach",
+    "number_of_adults": 2,
+    "number_of_children": 1,
+    "pool": true,
+    "meal_plan": "All-Inclusive"
+  },
+  {
+    "location": "Edinburgh",
+    "duration": "5 days",
+    "star_rating": 5,
+    "holiday_type": "City",
+    "number_of_adults": 2,
+    "number_of_children": 0,
+    "pool": false,
+    "meal_plan": "Breakfast"
+  },
+  {
+    "location": "Cancun",
+    "duration": "10 days",
+    "star_rating": 5,
+    "holiday_type": "Resort",
+    "number_of_adults": 2,
+    "number_of_children": 2,
+    "pool": true,
+    "meal_plan": "All-Inclusive"
+  },
+  {
+    "location": "Hawaii",
+    "duration": 7,
+    "starRating": 4,
+    "holidayType": "Beach",
+    "numberOfAdults": 2,
+    "numberOfChildren": 1,
+    "pool": true,
+    "mealPlan": "All-Inclusive"
+  },
+  {
+    "location": "London",
+    "duration": 1,
+    "starRating": 5,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 0,
+    "pool": false,
+    "mealPlan": "Breakfast included"
+  },
+  {
+    "location": "Paris",
+    "duration": 5,
+    "starRating": 5,
+    "holidayType": "City",
+    "numberOfAdults": 2,
+    "numberOfChildren": 0,
+    "pool": false,
+    "mealPlan": "Breakfast included"
+  },
+  {
+    "location": "Maldives",
+    "duration": 10,
+    "starRating": 5,
+    "holidayType": "Beach",
+    "numberOfAdults": 2,
+    "numberOfChildren": 0,
+    "pool": true,
+    "mealPlan": "Half Board"
+  },
+  {
+    "location": "New York",
+    "duration": 7,
+    "starRating": 4,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 2,
+    "pool": false,
+    "mealPlan": "Room Only"
+  },
+  {
+    "location": "New York",
+    "duration": 4,
+    "starRating": 2,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 2,
+    "pool": false,
+    "mealPlan": "Room Only"
+  },
+  {
+    "location": "London",
+    "duration": 2,
+    "starRating": 4,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 0,
+    "pool": false,
+    "mealPlan": "Breakfast included"
+  },
+  {
+    "location": "Rome",
+    "duration": 6,
+    "starRating": 3,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 0,
+    "pool": false,
+    "mealPlan": "All-Inclusive"
+  },
+  {
+    "location": "Phuket",
+    "duration": 9,
+    "starRating": 4,
+    "holidayType": "Beach",
+    "numberOfAdults": 2,
+    "numberOfChildren": 1,
+    "pool": true,
+    "mealPlan": "Full Board"
+  },
+  {
+    "location": "London",
+    "duration": 2,
+    "starRating": 4,
+    "holidayType": "City",
+    "numberOfAdults": 1,
+    "numberOfChildren": 0,
+    "pool": false,
+    "mealPlan": "Breakfast included"
+  }
+]
