@@ -18,21 +18,21 @@ function readReservationsCSV() {
     });
 }
 
-const numberOfDestinations = () => {
-    readReservationsCSV()
-        .then((reservations) => {
-            let distinct = []
-            console.log("NumberOfDestinations: ");
-            reservations.map((reservation) => {
-                if (!distinct.includes(reservation['Hotel name'])) {
-                    distinct.push(reservation['Hotel name'])
-                }
-            })
-            return distinct.length
+const numberOfDestinations = async () => {
+    try {
+        const reservations = await readReservationsCSV()
+        let distinct = []
+        reservations.map((reservation) => {
+            if (!distinct.includes(reservation['Hotel name'])) {
+                distinct.push(reservation['Hotel name'])
+            }
         })
-        .catch((error) => {
-            console.error('An error occurred:', error);
-        });
+        console.log("NumberOfDestinations: ", distinct.length);
+        return distinct.length
+    }
+    catch (error) {
+        console.error('An error occurred:', error);
+    }
 }
 
 const topFiveDestinations = async () => {
@@ -59,20 +59,20 @@ const topFiveDestinations = async () => {
 const whenBookingsAreMade = async () => {
     try {
         const reservations = await readReservationsCSV();
-        const count = { morning: 0, afternoon: 0, evening: 0, night: 0 };
+        const count = { Morning: 0, Afternoon: 0, Evening: 0, Night: 0 };
         reservations.forEach((reservation) => {
             const CreatedDateTime = Object.keys(reservation)[0];
             const getTime = reservation[CreatedDateTime].split(" ");
             const time = getTime[1].slice(0, 2);
 
             if (time > 6 && time < 12) {
-                count.morning += 1;
+                count.Morning += 1;
             } else if (time >= 12 && time < 18) {
-                count.afternoon += 1;
+                count.Afternoon += 1;
             } else if (time >= 18 && time < 24) {
-                count.evening += 1;
+                count.Evening += 1;
             } else {
-                count.night += 1;
+                count.Night += 1;
             }
         })
         console.log("When bookings are made: ", count)
@@ -90,5 +90,6 @@ whenBookingsAreMade();
 
 module.exports = {
     topFiveDestinations,
-    whenBookingsAreMade
+    whenBookingsAreMade,
+    numberOfDestinations
 }
