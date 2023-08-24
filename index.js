@@ -9,7 +9,7 @@ app.get('/route1', (req, res) => {
 });
 
 app.get('/numberOfDestinations', async (req, res) => {
-  const destinationCount = await numberOfDestinations()
+  const destinationCount = await numberOfDestinations();
   res.json(destinationCount);
 });
 
