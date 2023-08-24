@@ -1,0 +1,56 @@
+# Node.js generated files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Yarn integrity file
+.yarn-integrity
+
+# Optional eslint cache
+.eslintcache
+
+# Optional lerna files
+lerna-debug.log*
+
+# Parcel files
+.cache
+dist
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Mac files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+
+# Windows desktop.ini files
+Desktop.ini
+
+# Visual Studio Code files
+.vscode/
+
+# IDEA files
+.idea/
+
+# Node.js binary files
+*.log
+*.pid
+*.lock
