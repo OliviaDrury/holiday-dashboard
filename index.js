@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const { numberOfDestinations, topFiveDestinations, whenBookingsAreMade } = require('./holiday-analysis');
+const { numberOfDestinations, topFiveDestinations, whenBookingsAreMade, totalSpent } = require('./holiday-analysis');
 
 // Route handler for the first route
 app.get('/route1', (req, res) => {
@@ -20,6 +20,11 @@ app.get('/topFiveDestinations', async (req, res) => {
 
 app.get('/whenBookingsAreMade', async (req, res) => {
   const bookings = await whenBookingsAreMade();
+  res.json(bookings);
+});
+
+app.get('/totalSpent', async (req, res) => {
+  const bookings = await totalSpent();
   res.json(bookings);
 });
 

@@ -1,6 +1,9 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 
+const euroExchangeRate = 0.86;
+const INRExchangeRate = 0.0096;
+const USDExchangeRate = 0.79;
 
 function readReservationsCSV() {
     return new Promise((resolve, reject) => {
@@ -34,6 +37,51 @@ const numberOfDestinations = async () => {
         console.error('An error occurred:', error);
     }
 }
+
+const totalSpent = async () => {
+    try {
+        const reservations = await readReservationsCSV()
+        let total = 0;
+
+        reservations.map((reservation) => {
+            let reservationPrice = reservation['Price'];
+            if (reservationPrice.endsWith('EUR')) {
+                let euroPrice = parseFloat(reservationPrice.slice(0, - 3));
+                total += (euroPrice * euroExchangeRate);
+            } else if (reservationPrice.endsWith('INR')) {
+                let INRPrice = parseFloat(reservationPrice.slice(0, - 3));
+                total += (INRPrice * INRExchangeRate);
+            } else if (reservationPrice.endsWith('USD')) {
+                let USDPrice = parseFloat(reservationPrice.slice(0, reservationPrice.length - 3));
+                total += (USDPrice * USDExchangeRate);
+            } else
+                total += parseFloat((reservationPrice.slice(0, reservationPrice.length - 3)));
+        })
+
+        console.log("total of trips: ", total.toFixed(2));
+        return total.toFixed(2);
+    }
+    catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+
+// const MostVisitedRegion = async () => {
+//     try {
+//         const reservations = await readReservationsCSV()
+//         let distinct = []
+//         reservations.map((reservation) => {
+//             if (!distinct.includes(reservation['Hotel name'])) {
+//                 distinct.push(reservation['Hotel name'])
+//             }
+//         })
+//         console.log("NumberOfDestinations: ", distinct.length);
+//         return distinct.length
+//     }
+//     catch (error) {
+//         console.error('An error occurred:', error);
+//     }
+// }
 
 const topFiveDestinations = async () => {
     try {
@@ -87,9 +135,11 @@ const whenBookingsAreMade = async () => {
 numberOfDestinations();
 topFiveDestinations();
 whenBookingsAreMade();
+totalSpent();
 
 module.exports = {
     topFiveDestinations,
     whenBookingsAreMade,
-    numberOfDestinations
+    numberOfDestinations,
+    totalSpent
 }
